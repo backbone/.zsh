@@ -1,0 +1,15 @@
+#!/bin/zsh
+# vim: set filetype=zsh
+
+setopt prompt_subst
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' actionformats \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats       \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+zstyle ':vcs_info:*' enable git hg cvs svn
+zstyle ':vcs_info:*' disable-patterns "$HOME(/smb*|/.big/smb*)"
+
+PROMPT=$'%B%{\e[0;36m%}┌─[%{\e[0;36m%}%n%{\e[0;36m%}@%{\e[0;32m%}%m%{\e[0;36m%} (%T)]──(%{\e[0;33m%}%~%{\e[0;36m%})\n└─[%{\e[0;39m%}%# %{\e[0;36m%}>%b '
+RPROMPT=$'$(vcs_info_wrapper)'
