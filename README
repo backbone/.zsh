@@ -1,0 +1,13 @@
+# Create ~/.zshrc file with contents below.
+
+#!/bin/zsh
+# ~/.zshrc
+
+ZDOTDIR=~/.zsh
+
+source $ZDOTDIR/constants.sh
+for rc in $ZDOTDIR/*.sh
+do
+    source $rc 
+done
+unset rc
