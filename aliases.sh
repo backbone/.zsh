@@ -83,7 +83,7 @@ which alsamixer &>/dev/null && alias alsamixer='alsamixer -g' && alias equilizer
 which network.sh &>/dev/null && alias net='network.sh'
 which colordiff &>/dev/null && alias diff='colordiff'
 alias make="make -j$((`grep "^processor" /proc/cpuinfo | wc -l`+1)) 2>/dev/null"
-which colormake &>/dev/null && alias make="colormake -j$((`grep "^processor" /proc/cpuinfo | wc -l`+1)) 2>/dev/null"
+which colormake &>/dev/null && alias make="colormake -j$((`grep "^processor" /proc/cpuinfo -c`+1)) 2>/dev/null"
 which colorgcc &>/dev/null && {
 	alias c++='/usr/lib/colorgcc/bin/c++'
 	alias cc='/usr/lib/colorgcc/bin/cc'
