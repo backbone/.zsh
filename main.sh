@@ -43,6 +43,5 @@ setopt inc_append_history
 
 unsetopt equals
 
-stderred_lib_path=`whereis stderred.so | cut -d: -f2 | cut -d" " -f2`
-[[ "" != "$stderred_lib_path" ]] && alias stderred="LD_PRELOAD=$stderred_lib_path"
-unset stderred_lib_path
+alias stderred="LD_PRELOAD=/usr/lib/stderred.so"
+alias stderred32="LD_PRELOAD=/usr/lib32/stderred.so"
