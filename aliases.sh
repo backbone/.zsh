@@ -95,3 +95,4 @@ which astyle &>/dev/null && {
                      --indent-preprocessor --indent-col1-comments --break-blocks=all \
                      --pad-oper --pad-header --break-closing-brackets --add-brackets'
 }
+which network-profile.sh &>/dev/null && alias net=network-profile.sh
