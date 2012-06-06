@@ -50,7 +50,7 @@ pk () {
                         || bzip2 -9 -k $2 ;;
       g*z)            gzip -c -9 -n $2 > $2.gz || rm -f $2.gz ;;
       x*z)            xz -k -9 $2 ;;
-      rar)            rar a $2.rar $2 -m5 ;;
+      rar)            rar a $2.rar $2 -m5 -ol ;;
       zip)            zip -9 --symlinks -r $2.zip $2 ;;
       #Z)              ;;
       7z)             7z -mx=9 a $2.7z $2 ;;
