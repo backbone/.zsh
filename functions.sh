@@ -51,7 +51,7 @@ pk () {
       g*z)            gzip -c -9 -n $2 > $2.gz || rm -f $2.gz ;;
       x*z)            xz -k -9 $2 ;;
       rar)            rar a $2.rar $2 -m5 ;;
-      zip)            zip -9 -r $2.zip $2 ;;
+      zip)            zip -9 --symlinks -r $2.zip $2 ;;
       #Z)              ;;
       7z)             7z -mx=9 a $2.7z $2 ;;
       *)              echo "'$1' cannot be packed via pk()" ;;
