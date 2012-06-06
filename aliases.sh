@@ -27,7 +27,7 @@ alias rmdir='rmdir -v'
 # fs statistics
 alias df='df -hT'
 alias dfm='df -mT'
-alias fs='du -shcx * .* | sort -h'
+alias fs='du -shcx (|.)* | sort -h'
 alias du='du --human-readable --total'
 
 # process operations
