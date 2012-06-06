@@ -12,7 +12,9 @@ extract () {
     echo "too many parameters to extract ()"
   elif [ -f "$1" ] ; then
     case $1 in
-    *.tar.bz2|*.tbz2|*.tbz)   tar xjf $1 ;; # FIXME: make parallel with lbunzip2
+    *.tar.bz2|*.tbz2|*.tbz)   which lbunzip2 &>/dev/null \
+                                && lbunzip2 -c -kn$((`grep "^processor" /proc/cpuinfo -c`+1)) $1 | tar xf - \
+                                || tar xjf $1 ;;
     *.tar.gz|*.tgz)           tar xzf $1 ;;
     *.tar.xz|*.txz)           tar xJf $1 ;;
     *.tar)                    tar xf $1 ;;
@@ -23,7 +25,7 @@ extract () {
     *.xz)                     unxz -c $1 > ${1%.xz} ;;
     *.rar)                    unrar x $1 ;;
     *.zip)                    unzip $1 ;;
-    #*.Z)                      uncompress $1 ;; # FIXME: test
+    #*.Z)                      uncompress $1 ;;
     *.7z)                     7z x $1 ;;
     *)                        echo "I don't know how to extract '$1'..." ;;
     esac
@@ -50,7 +52,7 @@ pk () {
       x*z)            xz -c -9 $2 > $2.xz ;;
       rar)            rar a $2.rar $2 -m5 ;;
       zip)            zip -9 -r $2.zip $2 ;;
-      #Z)              ;; # FIXME: test
+      #Z)              ;;
       7z)             7z -mx=9 a $2.7z $2 ;;
       *)              echo "'$1' cannot be packed via pk()" ;;
     esac
