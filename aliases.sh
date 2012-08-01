@@ -14,7 +14,7 @@ alias llha='llah'
 alias fls="fls -rd" 
 
 # file operations
-alias cp='nocorrect cp --verbose --recursive --preserve=all'
+alias cp='nocorrect cp --verbose --preserve=all'
 alias mv='nocorrect mv --verbose'
 alias rm='nocorrect rm -v'
 alias ln='ln -vi'
