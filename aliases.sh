@@ -82,8 +82,8 @@ which alsamixer &>/dev/null && alias alsamixer='alsamixer -g' && alias equilizer
 [ -x /usr/libexec/mc/mc-wrapper.sh ] && alias mc='. /usr/libexec/mc/mc-wrapper.sh -x'
 which network.sh &>/dev/null && alias net='network.sh'
 which colordiff &>/dev/null && alias diff='colordiff'
-alias make="make -j$((`grep ^processor /proc/cpuinfo -c`+1))"
-which colormake &>/dev/null && alias make="colormake -j$((`grep ^processor /proc/cpuinfo -c`+1))"
+alias make="make -j$((`getconf _NPROCESSORS_ONLN`+1))"
+which colormake &>/dev/null && alias make="colormake -j$((`getconf _NPROCESSORS_ONLN`+1))"
 which colorgcc &>/dev/null && {
 	alias c++='/usr/lib/colorgcc/bin/c++'
 	alias cc='/usr/lib/colorgcc/bin/cc'

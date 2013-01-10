@@ -13,13 +13,13 @@ extract () {
   elif [ -f "$1" ] ; then
     case $1 in
     *.tar.bz2|*.tbz2|*.tbz)   which lbunzip2 &>/dev/null \
-                                && lbunzip2 -c -kn$((`grep "^processor" /proc/cpuinfo -c`+1)) $1 | tar xf - \
+                                && lbunzip2 -c -kn$((`getconf _NPROCESSORS_ONLN`+1)) $1 | tar xf - \
                                 || tar xjf $1 ;;
     *.tar.gz|*.tgz)           tar xzf $1 ;;
     *.tar.xz|*.txz)           tar xJf $1 ;;
     *.tar)                    tar xf $1 ;;
     *.bz2)                    which lbunzip2 &>/dev/null \
-                                && lbunzip2 -kn$((`grep "^processor" /proc/cpuinfo -c`+1)) $1 \
+                                && lbunzip2 -kn$((`getconf _NPROCESSORS_ONLN`+1)) $1 \
                                 || bunzip2 -k $1 ;;
     *.gz)                     gunzip -c $1 > ${1%.gz} || rm -f ${1%.gz} ;;
     *.xz)                     unxz -k $1 ;;
@@ -46,7 +46,7 @@ pk () {
       t*x*|t*J*)      tar cJvf $2.tar.xz  $2 ;;
       t*r)            tar cpvf $2.tar  $2 ;;
       b*z*)           which lbzip2 &>/dev/null \
-                        && lbzip2 -9 -kn$((`grep "^processor" /proc/cpuinfo -c`+1)) $2 \
+                        && lbzip2 -9 -kn$((`getconf _NPROCESSORS_ONLN`+1)) $2 \
                         || bzip2 -9 -k $2 ;;
       g*z)            gzip -c -9 -n $2 > $2.gz || rm -f $2.gz ;;
       x*z)            xz -k -9 $2 ;;
