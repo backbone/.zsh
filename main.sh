@@ -45,3 +45,5 @@ unsetopt equals
 
 alias stderred="LD_PRELOAD=/usr/lib/stderred.so"
 alias stderred32="LD_PRELOAD=/usr/lib32/stderred.so"
+
+unset DBUS_SESSION_BUS_ADDRESS
