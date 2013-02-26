@@ -96,3 +96,4 @@ which astyle &>/dev/null && {
                      --pad-oper --pad-header --break-closing-brackets --add-brackets'
 }
 which network-profile.sh &>/dev/null && alias net=network-profile.sh
+which iconv &>/dev/null && alias cp1251toUTF8='iconv -f cp1251 -t utf8'
