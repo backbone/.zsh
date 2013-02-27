@@ -97,3 +97,5 @@ which astyle &>/dev/null && {
 }
 which network-profile.sh &>/dev/null && alias net=network-profile.sh
 which iconv &>/dev/null && alias cp1251toUTF8='iconv -f cp1251 -t utf8'
+
+which eix &>/dev/null && alias eix='TERM=screen eix'
