@@ -10,8 +10,6 @@ export HISTCONTROL="ignoredupes"
 export HISTIGNORE="&:ls:[bf]g:exit: cd \"\`*: PROMPT_COMMAND=\'*:cd \'/*"
 export PROMPT_COMMAND='history -a'
 
-export LS_COLORS="di=01;34:fi=0:ln=01;36:pi=43:so=45:bd=46:cd=40:or=05;41:mi=05;41:ex=01;32"
-
 export PATH="$PATH:/sbin:/usr/sbin:/usr/local/sbin:/usr/local/bin:$HOME/scripts:$HOME/bin"
 [ -x /usr/bin/src-hilite-lesspipe.sh ] && export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
