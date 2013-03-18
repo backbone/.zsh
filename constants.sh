@@ -38,5 +38,8 @@ case $TERM in
 	;;
 esac
 
-[[ -f $HOME/.dircolors ]] && eval $(dircolors -b $HOME/.dircolors)
-[[ -n "$DISPLAY" ]] && [[ -f $HOME/.dircolors_256 ]] && eval $(dircolors -b $HOME/.dircolors_256)
+if [[ "linux" == "$TERM" && -f $HOME/.dircolors ]]; then
+    eval $(dircolors -b $HOME/.dircolors)
+elif [[ "linux" != "$TERM" &&  -f $HOME/.dircolors_256 ]]; then
+    eval $(dircolors -b $HOME/.dircolors_256)
+fi
