@@ -64,7 +64,7 @@ which grc &>/dev/null && {
 
 alias killall="killall --interactive --verbose"
 
-alias free="free -t -m"
+alias free="free -t -h"
 
 which git &>/dev/null && alias git="nocorrect git"
 which hg &>/dev/null && alias hg="nocorrect hg"
