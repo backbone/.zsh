@@ -11,7 +11,7 @@ alias lla='ls -la'
 alias llh='ls -lh'
 alias llah='ls -lah'
 alias llha='llah'
-alias fls="fls -rd" 
+alias fls="fls -rd"
 
 # file operations
 alias cp='nocorrect cp --verbose --preserve=all'
@@ -32,14 +32,14 @@ alias du='du --human-readable --total'
 
 # process operations
 alias nohup='nohup > /dev/null $1'
-alias k='killall' 
+alias k='killall'
 which sudo &>/dev/null && alias sk='sudo killall'
 
 # autofixing
 alias cd..='cd ..'
 alias cd~='cd ~'
 alias cd-='cd -'
- 
+
 alias grep='grep --color=always'
 
 which grc &>/dev/null && {
@@ -56,7 +56,7 @@ which grc &>/dev/null && {
     alias ping='grc ping'
     alias cat="grc cat"
     alias tail="grc tail"
-    alias head="grc head" 
+    alias head="grc head"
 }
 
 alias killall="killall --interactive --verbose"
@@ -70,6 +70,9 @@ which scrot &>/dev/null && alias scrot="scrot --border --count --quality 75 $HOM
 
 which sudo &>/dev/null && alias su='sudo su -'
 which hd &>/dev/null && alias hd='hexdump -C'
+
+
+
 which sudo &>/dev/null && alias krnlconfig="sudo make MENUCONFIG_MODE=single_menu MENUCONFIG_COLOR=mono menuconfig"
 which valgrind &>/dev/null && alias valgrind='valgrind --tool=callgrind'
 which cgdb &>/dev/null && alias cgdb='LANG=ru_RU.koi8-r cgdb'
@@ -82,10 +85,10 @@ which colordiff &>/dev/null && alias diff='colordiff'
 alias make="make -j$((`getconf _NPROCESSORS_ONLN`+1))"
 which colormake &>/dev/null && alias make="colormake -j$((`getconf _NPROCESSORS_ONLN`+1))"
 which colorgcc &>/dev/null && {
-	alias c++='/usr/lib/colorgcc/bin/c++'
-	alias cc='/usr/lib/colorgcc/bin/cc'
-	alias g++='/usr/lib/colorgcc/bin/g++'
-	alias gcc='/usr/lib/colorgcc/bin/gcc'
+    alias c++='/usr/lib/colorgcc/bin/c++'
+    alias cc='/usr/lib/colorgcc/bin/cc'
+    alias g++='/usr/lib/colorgcc/bin/g++'
+    alias gcc='/usr/lib/colorgcc/bin/gcc'
 }
 which astyle &>/dev/null && {
   alias astyle-glib='astyle --style=gnu --indent=spaces=2 --max-instatement-indent=80 \
@@ -94,17 +97,23 @@ which astyle &>/dev/null && {
 }
 which network-profile.sh &>/dev/null && alias net=network-profile.sh
 which iconv &>/dev/null && alias cp1251toUTF8='iconv -f cp1251 -t utf8'
-
+which vim &>/dev/null && {
+    alias vim='TERM=xterm-256color vim'
+    alias svim='sudo TERM=xterm-256color vim'
+    alias v='vim'
+    alias sv='svim'
+    alias vimdiff='TERM=xterm-256color vimdiff'
+    alias svimdiff='sudo TERM=xterm-256color vimdiff'
+    alias vdiff='vimdiff'
+    alias svdiff='svimdiff'
+    alias vd='vdiff'
+    alias svd='svdiff'
+}
 which eix &>/dev/null && alias eix='TERM=screen eix'
-which vim &>/dev/null && alias vim='TERM=xterm-256color vim'
-which vim &>/dev/null && alias svim='sudo TERM=xterm-256color vim'
-alias svimdiff 'sudo TERM=xterm-256color vimdiff'
-alias v='vim'
-alias sv='svim'
-alias svdiff='svimdiff'
-alias svd='svdiff'
-which mc &>/dev/null && alias mc='TERM=xterm-256color mc'
-which mc &>/dev/null && alias smc='sudo TERM=xterm-256color mc'
-alias m='mc'
-alias sm='smc'
-alias git='TERM=xterm-256color git'
+which mc &>/dev/null && {
+    alias mc='TERM=xterm-256color mc'
+    alias smc='sudo TERM=xterm-256color mc'
+    alias m='mc'
+    alias sm='smc'
+}
+which git &>/dev/null && alias git='TERM=xterm-256color git'
