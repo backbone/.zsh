@@ -13,7 +13,9 @@
         alias -s {pdf,djvu}="nohup &> /dev/null evince"
         which gnome-mplayer &>/dev/null && alias -s {avi,mpeg,mpg,3gp}="nohup &>/dev/null gnome-mplayer" ||  alias -s {avi,mpeg,mpg,3gp}="nohup &>/dev/null mplayer"
         alias -s {odt,doc,sxw,rtf,odf,xls,ppt}="nohup &> /dev/null soffice"
-        alias -s {html,htm}="firefox"
+        # alias -s {html,htm,xhtml}=pick-web-browser
+        which firefox &>/dev/null && alias -s {html,htm,xhtml}="firefox"
+        which firefox-bin &>/dev/null && alias -s {html,htm,xhtml}="firefox-bin"
         alias -s {txt,lst}="cat"
         alias -s exe="wine"
 }
@@ -21,4 +23,3 @@
 alias -s {wav,mp3,ogg}="alsaplayer"
 
 autoload -U pick-web-browser
-alias -s {html,htm,xhtml}=pick-web-browser
