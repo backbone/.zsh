@@ -2,4 +2,4 @@
 # vim: set filetype=zsh
 
 export NAME="Kolan Sh."
-export EMAIL=mecareful@gmail.com
+export EMAIL=backbone@backbone.ws
