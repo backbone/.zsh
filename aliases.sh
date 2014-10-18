@@ -34,7 +34,8 @@ alias du='du --human-readable --total'
 alias nohup='nohup > /dev/null $1'
 alias k='killall'
 which sudo &>/dev/null && alias sk='sudo killall'
-alias x="exec sh -c \"(/usr/bin/nohup xinit -- -nolisten tcp vt`fgconsole 2>/dev/null` &>/dev/null)&\""
+FGCONSOLE=`fgconsole 2>/dev/null`
+[ ! -z $FGCONSOLE ] && alias x="exec nohup xinit -- -nolisten tcp vt$FGCONSOLE &>/dev/null"
 
 # autofixing
 alias cd..='cd ..'
