@@ -123,3 +123,5 @@ which git &>/dev/null && alias git='TERM=xterm-256color git'
 
 which optirun &>/dev/null && alias primusrun='vblank_mode=0 optirun -b primus'
 which optirun &>/dev/null && alias primus='vblank_mode=0 optirun -b primus'
+
+which tmux &>/dev/null && alias t=tmux
