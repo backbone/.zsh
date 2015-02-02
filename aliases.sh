@@ -87,6 +87,7 @@ which network.sh &>/dev/null && alias net='network.sh'
 which colordiff &>/dev/null && alias diff='colordiff'
 alias make="make -j$((`getconf _NPROCESSORS_ONLN`+1))"
 which colormake &>/dev/null && alias make="colormake -j$((`getconf _NPROCESSORS_ONLN`+1))"
+alias ctest="ctest -j$((`getconf _NPROCESSORS_ONLN`+1))"
 which colorgcc &>/dev/null && {
     alias c++='/usr/lib/colorgcc/bin/c++'
     alias cc='/usr/lib/colorgcc/bin/cc'
