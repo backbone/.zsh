@@ -81,7 +81,7 @@ which valgrind &>/dev/null && alias valgrind='valgrind --tool=callgrind'
 which cgdb &>/dev/null && alias cgdb='LANG=ru_RU.koi8-r cgdb'
 which rsync &>/dev/null && alias cpb='rsync --progress -h' \
                         && alias cpbs='rsync --progress -h -rax --delete-excluded'
-which alsamixer &>/dev/null && alias alsamixer='alsamixer -g' && alias equilizer='alsamixer -D equal'
+which alsamixer &>/dev/null && alias alsamixer='alsamixer --view=all' && alias equilizer='alsamixer -D equal'
 [ -x /usr/libexec/mc/mc-wrapper.sh ] && alias mc='. /usr/libexec/mc/mc-wrapper.sh -x'
 which network.sh &>/dev/null && alias net='network.sh'
 which colordiff &>/dev/null && alias diff='colordiff'
