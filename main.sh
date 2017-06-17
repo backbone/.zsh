@@ -28,7 +28,7 @@ zstyle ':completion:*:processes' sort false
 
 zstyle ':completion:*:processes-names' command 'ps xho command'
 
-setopt correctall
+#setopt correctall
 setopt noflowcontrol
 
 # history
