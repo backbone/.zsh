@@ -23,8 +23,8 @@ zstyle ':completion:*:*:kill:*' menu yes select
 zstyle ':completion:*:kill:*' force-list always
 
 HISTFILE=~/.zsh/.histfile
-HISTSIZE=8192
-SAVEHIST=8192
+HISTSIZE=65536
+SAVEHIST=65536
 
 export LANG="ru_RU.UTF-8"
 export LC_PAPER="ru_RU.UTF-8"
