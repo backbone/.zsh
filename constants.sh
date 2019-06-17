@@ -43,3 +43,5 @@ if [[ "linux" == "$TERM" && -f $HOME/.dircolors ]]; then
 elif [[ "linux" != "$TERM" &&  -f $HOME/.dircolors_256 ]]; then
     eval $(dircolors -b $HOME/.dircolors_256)
 fi
+
+export COLORTERM=truecolor
