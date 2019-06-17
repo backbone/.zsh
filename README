@@ -5,9 +5,14 @@
 
 ZDOTDIR=~/.zsh
 
-source $ZDOTDIR/constants.sh
+[ -x $ZDOTDIR/const.sh ] && source $ZDOTDIR/const.sh
+[ -x $ZDOTDIR/local_const.sh ] && source $ZDOTDIR/local_const.sh
 for rc in $ZDOTDIR/*.sh
 do
-    source $rc 
+    [ -x $rc ] && source $rc 
 done
 unset rc
+
+[ -x $ZDOTDIR/local.sh ] && source $ZDOTDIR/local.sh
+
+unset ZDOTDIR
