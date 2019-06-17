@@ -11,5 +11,5 @@ zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
 zstyle ':vcs_info:*' enable svn hg git
 zstyle ':vcs_info:*' disable-patterns "$HOME(/smb*|/.big/smb*)"
 
-PROMPT=$'%B%{\e[0;36m%}┌─[%{\e[0;36m%}%n%{\e[0;36m%}@%{\e[0;$HOST_COLOR%}%m%{\e[0;36m%} (%T)]──(%{\e[0;33m%}%~%{\e[0;36m%})\n└─[%{\e[0;39m%}%# %{\e[0;36m%}>%b '
+PROMPT=$'%B%{\e[0;$PROMPT_COLOR%}┌─[%{\e[0;$PROMPT_COLOR%}%n%{\e[0;$PROMPT_COLOR%}@%{\e[0;$HOST_COLOR%}%m%{\e[0;$PROMPT_COLOR%} (%T)]──(%{\e[0;33m%}%~%{\e[0;$PROMPT_COLOR%})\n└─[%{\e[0;39m%}%# %{\e[0;$PROMPT_COLOR%}>%b '
 RPROMPT=$'$(vcs_info_wrapper)'

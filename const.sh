@@ -45,4 +45,5 @@ elif [[ "linux" != "$TERM" &&  -f $HOME/.dircolors_256 ]]; then
 fi
 
 export COLORTERM=truecolor
+PROMPT_COLOR=36m
 HOST_COLOR=31m
