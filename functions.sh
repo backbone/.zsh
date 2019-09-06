@@ -5,8 +5,6 @@ cdl() { cd $1 && ls }
 
 mkcd() { mkdir $1 && cd $1 }
 
-rcd() { cd .. && rm -irfv $OLDPWD }
-
 extract () {
   if [ $2 ] ; then
     echo "too many parameters to extract ()"
