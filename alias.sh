@@ -130,3 +130,4 @@ which optirun &>/dev/null && alias primus='vblank_mode=0 optirun -b primus'
 which tmux &>/dev/null && alias t=tmux
 
 which ssh &>/dev/null && alias sshnocheck='ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'
+which scp &>/dev/null && alias scpnocheck='scp -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'
