@@ -35,6 +35,8 @@ alias nohup='nohup > /dev/null $1'
 alias k='killall'
 which sudo &>/dev/null && alias sk='sudo killall'
 FGCONSOLE=`fgconsole 2>/dev/null`
+#[ ! -z $FGCONSOLE ] && alias x="exec nohup xinit -- :$FGCONSOLE -nolisten tcp vt$FGCONSOLE &>/dev/null"
+#[ ! -z $FGCONSOLE ] && alias xt="exec nohup xinit urxvt -- :$FGCONSOLE -nolisten tcp vt$FGCONSOLE &>/dev/null"
 [ ! -z $FGCONSOLE ] && alias x="exec xinit -- :$FGCONSOLE -nolisten tcp vt$FGCONSOLE &>/dev/null"
 [ ! -z $FGCONSOLE ] && alias xt="exec xinit urxvt -- :$FGCONSOLE -nolisten tcp vt$FGCONSOLE &>/dev/null"
 
@@ -126,3 +128,5 @@ which optirun &>/dev/null && alias primusrun='vblank_mode=0 optirun -b primus'
 which optirun &>/dev/null && alias primus='vblank_mode=0 optirun -b primus'
 
 which tmux &>/dev/null && alias t=tmux
+
+which ssh &>/dev/null && alias sshnocheck='ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'
