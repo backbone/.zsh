@@ -44,6 +44,8 @@ elif [[ "linux" != "$TERM" &&  -f $HOME/.dircolors_256 ]]; then
     eval $(dircolors -b $HOME/.dircolors_256)
 fi
 
+export XCURSOR_SIZE=24
+
 export COLORTERM=truecolor
 PROMPT_COLOR=36m
 HOST_COLOR=31m
